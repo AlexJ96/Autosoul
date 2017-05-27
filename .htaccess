@@ -1,0 +1,15 @@
+Options +FollowSymLinks
+RewriteEngine On
+ 
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+
+RewriteRule ^news/(\d+)-([\[\]=,%\?&@~#\{\}\+'\.*!™`A-Za-z0-9_-]+)/*$ ./news/index.php?id=$1
+RewriteRule ^admin/publish$ ./admin/publish.php
+RewriteRule ^admin/home$ ./admin/home.php
+RewriteRule ^admin/drafts$ ./admin/drafts.php
+RewriteRule ^admin/schedule$ ./admin/schedule.php
+RewriteRule ^admin/history$ ./admin/history.php
+RewriteRule ^admin/featured$ ./admin/featured.php
+RewriteRule ^admin/published$ ./admin/published.php
